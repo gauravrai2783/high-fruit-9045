@@ -215,6 +215,56 @@ price:"&#x20B9 10,999",
 type:"FREE SHIPPING",},
 ]
 
+let imgArray=[
+    "https://d64lkarmo2mrq.cloudfront.net/img/home/freedom2222.webp",
+"https://d64lkarmo2mrq.cloudfront.net/img/home/bluetooth2022.webp",
+"https://d64lkarmo2mrq.cloudfront.net/img/home/womenswatches2022.webp",
+"https://d64lkarmo2mrq.cloudfront.net/img/home/nordic2022.webp",
+]
+
+let slideImg=document.querySelector("#slideImg");
+
+let len=imgArray.length;
+
+let i=0;
+
+function slider(){
+    if(i>len-1){
+        i=0;
+    }
+    slideImg.src=imgArray[i];
+    i++;
+    setTimeout('slider()',1000);
+}
+
+
+let img=document.querySelector("#slideImg");
+
+let buttons=document.querySelectorAll("button");
+
+let imgNum=0;
+
+
+buttons[0].addEventListener("click",function(){
+if(imgNum===0){
+imgNum=imgArray.length-1;
+}
+else{
+imgNum--;
+}
+img.setAttribute("src",imgArray[imgNum]);
+})
+
+buttons[1].addEventListener("click",function(){
+if(imgNum===imgArray.length-1){
+imgNum=0;
+}
+else{
+imgNum++;
+}
+img.setAttribute("src",imgArray[imgNum]);
+})
+
 DATA.forEach(function(elem){
     let box=document.createElement("div");
 
@@ -238,4 +288,10 @@ DATA.forEach(function(elem){
     document.querySelector("#container").append(box)
 
 })
+
+{/* <script> */}
+    
+    
+    
+{/* </script> */}
 
